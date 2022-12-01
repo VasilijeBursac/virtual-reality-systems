@@ -89,7 +89,7 @@ Kako bi se svi fajlovi ispravno preuzeli i učitali prilikom pokretanja, neophod
 - [*Git*](https://git-scm.com/ "Link za preuzimanje Git-a")
 - [*Git LFS*](https://git-lfs.github.com/ "Link za preuzimanje Git LFS-a")
 
-- *Opciono:* Za brže i slikovitije rukovanje *git* repozitorijumom možete preuzeti [GitHub Desktop](https://desktop.github.com/ "Link za preuzimanje GitHub Desktop alata").
+- *Opciono:* Za brže i slikovitije rukovanje *git* repozitorijumom možete preuzeti [*GitHub Desktop*](https://desktop.github.com/ "Link za preuzimanje GitHub Desktop alata").
 
 <br>
 
