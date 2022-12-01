@@ -74,7 +74,7 @@ Materijali za računarske vežbe sa kursa "Sistemi virtualne realnosti" na [Faku
         - Proverite da li su *Unity* i *Visual Studio* ispravno povezani, tj. proverite u *Unity* editoru da li je ta verzija *Visual Studio*-a (koju ste instalirali) ispravno podešena kao editor koda. **Kompletan postupak je prikazan na [tutorijalu za povezivanje](#povezivanje-unity-pogona-sa-visual-studio-razvojnim-okruženjem "Povezivanje Unity pogona sa Visual Studio razvojnim okruženjem")**.
     - **Ako nemate instaliran *Visual Studio***: 
         - Instalirajte *Visual Studio* u sklopu *Unity* instalacije, kao što je urađeno u [tutorijalu za instalaciju](#instalacija-unity-pogona-i-visual-studio-razvojnog-okruženja "Instalacija Unity pogona i Visual Studio razvojnog okruženja").
-        - Ispratite [tutorijal za povezivanje radi provere](#povezivanje-unity-pogona-sa-visual-studio-razvojnim-okruženjem "Povezivanje Unity pogona sa Visual Studio razvojnim okruženjem").
+        - Ispratite [tutorijal za povezivanje](#povezivanje-unity-pogona-sa-visual-studio-razvojnim-okruženjem "Povezivanje Unity pogona sa Visual Studio razvojnim okruženjem") radi provere.
 
 #### Povezivanje *Unity* pogona sa *Visual Studio* razvojnim okruženjem
 - [Tutorijal](https://www.youtube.com/watch?v=4ElwPXo4oCc&ab_channel=Stachey "Video uputstvo za povezivanje Unity pogona sa Visual Studio razvojnim okruženjem")
