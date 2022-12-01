@@ -82,9 +82,14 @@ Materijali za računarske vežbe sa kursa "Sistemi virtualne realnosti" na [Faku
     - U *Unity*-ju napravite *C#* skriptu, a zatim je otvorite (dvoklikom) u *Visual Studio* okruženju. Ako je sve povezano kako treba, ispod naziva skripte će pisati "*Assembly-CSharp*" (videti sliku ispod).
 
 #### Git i Git LFS
-Kako bi se svi fajlovi ispravno preuzeli i učitali prilikom pokretanja, neophodno je da **<ins>na računaru na kom se pokreće primer, pre preuzimanja i pokretanja primera</ins>**, budu instalirani *Git* i *Git LFS (Git Large File Storage*). Linkovi za njihovo preuzimanje su u nastavku.
+*Git LFS (Git Large File Storage)*
+<br>
+<br>
+Kako bi se svi fajlovi ispravno preuzeli i učitali prilikom pokretanja, neophodno je da **<ins>na računaru na kom se pokreće primer, pre preuzimanja i pokretanja primera</ins>**, budu instalirani *Git* i *Git LFS (Git Large File Storage)*. Linkovi za njihovo preuzimanje su u nastavku.
 - [*Git*](https://git-scm.com/ "Link za preuzimanje Git-a")
 - [*Git LFS*](https://git-lfs.github.com/ "Link za preuzimanje Git LFS-a")
+
+- *Opciono:* Za brže i slikovitije rukovanje *git* repozitorijumom možete preuzeti [GitHub Desktop](https://desktop.github.com/ "Link za preuzimanje GitHub Desktop alata").
 
 <br>
 
@@ -94,7 +99,31 @@ Kako bi se svi fajlovi ispravno preuzeli i učitali prilikom pokretanja, neophod
 
 ### Pokretanje primera sa vežbi
 - :exclamation: <ins>***VAŽNA NAPOMENA*:</ins> Pre preuzimanja i pokretanja primera sa ovog repozitorijuma, obavezno prethodno [instalirajte *Git* i *Git LFS*!](#git-i-git-lfs "Uputstvo za instalaciju Git-a i Git LFS-a")** <br>
-- Nakon preuzimanja željenog primera sa repozitorijuma, *Unity* projekat se pokreće klikom na dugme *Open* u *Projects* sekciji *Unity Hub*-a, a zatim lociranjem korenskog foldera projekta koji ste preuzeli (videti *gif* ispod).
+- Pozicionirati se u željeni folder i pokrenuti *Git Bash* u njemu (desni klik, pa klik na "*Git Bash Here*").
+- Klonirati repozitorijum: 
+```
+git clone https://github.com/VasilijeBursac/virtual-reality-systems.git
+```
+- Pozicionirati se u klonirani repozitorijum:
+```
+cd virtual-reality-systems
+```
+- Preuzeti najnovije stanje sa udaljenog repozitorijuma i ažurirati lokalni repozitorijum: 
+```
+git pull
+```
+- Izlistati sve lokalne i udaljene grane: 
+```
+git branch -a
+```
+- Prebaciti se na željenu granu:
+```
+ git checkout IME_GRANE
+```
+`IME_GRANE` predstavlja naziv grane na kojoj se nalazi primer koji želite da pokrenete (npr. *week-1*). 
+- Alternativno, repozitorijum se može klonirati pomoću *GitHub Desktop* alata, [po ovom uputstvu](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-a-repository-from-github-to-github-desktop "Uputstvo za kloniranje repozitorijuma preko GitHub Desktop alata").
+- Nakon preuzimanja željenog primera sa repozitorijuma, tj. **pozicioniranja na odgovarajuću granu**, *Unity* projekat se pokreće klikom na dugme *Open* u *Projects* sekciji *Unity Hub*-a, a zatim lociranjem korenskog foldera projekta koji želite da pokrenete.
+- **Kompletna procedura za kloniranje repozitorijuma i pokretanje primera je prikazana ispod.**
 
 #### Nedostatak tekstura ili drugih multimedijalnih fajlova
 Ukoliko nakon pokretanja projekta nedostaju teksture ili neki drugi multimedijalni fajlovi, verovatno niste prethodno instalirali *Git LFS*. U tom slučaju, ispratite sledeći redosled operacija:
