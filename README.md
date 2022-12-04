@@ -61,7 +61,7 @@ Materijali za računarske vežbe sa kursa "Sistemi virtualne realnosti" na [Faku
 ### *Windows*, *macOS*, *Linux*
 *Unity pogon* i *Visual Studio* razvojno okruženje su dostupni za sve navedene operativne sisteme i proces instalacije je skoro identičan za svaki od njih. Ispratite uputstvo u nastavku i sve bi trebalo da bude u redu.
 
-#### Instalacija *Unity* pogona i *Visual Studio* razvojnog okruženja
+#### :white_check_mark:  Instalacija *Unity* pogona i *Visual Studio* razvojnog okruženja
 - [Tutorijal](https://www.youtube.com/watch?v=gxX7euQ_2Qc&ab_channel=GDTitans "Video uputstvo za instalaciju Unity pogona i Visual Studio razvojnog okruženja")
 
 - :exclamation: <ins>***VAŽNE NAPOMENE:***</ins> 
@@ -76,12 +76,12 @@ Materijali za računarske vežbe sa kursa "Sistemi virtualne realnosti" na [Faku
         - Instalirajte *Visual Studio* u sklopu *Unity* instalacije, kao što je urađeno u [tutorijalu za instalaciju](#instalacija-unity-pogona-i-visual-studio-razvojnog-okruženja "Instalacija Unity pogona i Visual Studio razvojnog okruženja").
         - Ispratite [tutorijal za povezivanje](#povezivanje-unity-pogona-sa-visual-studio-razvojnim-okruženjem "Povezivanje Unity pogona sa Visual Studio razvojnim okruženjem") radi provere.
 
-#### Povezivanje *Unity* pogona sa *Visual Studio* razvojnim okruženjem
+#### :white_check_mark: Povezivanje *Unity* pogona sa *Visual Studio* razvojnim okruženjem
 - [Tutorijal](https://www.youtube.com/watch?v=4ElwPXo4oCc&ab_channel=Stachey "Video uputstvo za povezivanje Unity pogona sa Visual Studio razvojnim okruženjem")
 - **Provera da li su *Unity* i *Visual Studio* ispravno povezani:**
     - U *Unity*-ju napravite *C#* skriptu, a zatim je otvorite (dvoklikom) u *Visual Studio* okruženju. Ako je sve povezano kako treba, ispod naziva skripte će pisati "*Assembly-CSharp*" (videti sliku ispod).
 
-#### Git i Git LFS
+#### :white_check_mark: Git i Git LFS
 *Git LFS (Git Large File Storage)*
 <br>
 <br>
