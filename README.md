@@ -22,10 +22,12 @@ Materijali za računarske vežbe sa kursa "Sistemi virtualne realnosti" na [Faku
     - [Tehnologije i razvojno okruženje](#tehnologije-i-razvojno-okruženje)
     - **[Instalacija i podešavanje](#instalacija-i-podešavanje)**
         - [*Windows*, *macOS*, *Linux*](#windows-macos-linux)
-            - [Instalacija *Unity* pogona i *Visual Studio* razvojnog okruženja](#instalacija-unity-pogona-i-visual-studio-razvojnog-okruženja)
-            - [Povezivanje *Unity* pogona sa *Visual Studio* razvojnim okruženjem](#povezivanje-unity-pogona-sa-visual-studio-razvojnim-okruženjem)
-            - [*Git* i *Git LFS*](#git-i-git-lfs)
-        - [Pokretanje primera sa vežbi](#pokretanje-primera-sa-vežbi)
+            - [Instalacija *Unity* pogona i *Visual Studio* razvojnog okruženja](#white_check_mark-instalacija-unity-pogona-i-visual-studio-razvojnog-okruženja)
+            - [Povezivanje *Unity* pogona sa *Visual Studio* razvojnim okruženjem](#white_check_mark-povezivanje-unity-pogona-sa-visual-studio-razvojnim-okruženjem)
+            - [*Git* i *Git LFS*](#white_check_mark-git-i-git-lfs)
+    - **[Preuzimanje i pokretanje primera sa vežbi](#pokretanje-primera-sa-vežbi)**
+        - [Kloniranje repozitorijuma i preuzimanje primera](#windows-macos-linux)
+        - [Pokretanje primera u *Unity* pogonu](#windows-macos-linux)
             - [Nedostatak tekstura ili drugih multimedijalnih fajlova](#nedostatak-tekstura-ili-drugih-multimedijalnih-fajlova)
 
 ---
@@ -33,9 +35,9 @@ Materijali za računarske vežbe sa kursa "Sistemi virtualne realnosti" na [Faku
 <details>
    <summary><h2>Sadržaj nastave po nedeljama semestra</h2></summary>
     
-   - Nedelja 1: [Uvod u Unity pogon - Osnovne rada u Unity pogonu i manipulacija 3D objektima](../../tree/week-1 "Link do materijala")
-   - Nedelja 2: [3D modelovanje u Unity-ju - ProBuilder paket](../../tree/week-2  "Link do materijala")
-   - Nedelja 3: [Kreiranje virtualnih okruženja](../../tree/week-3 "Link do materijala")
+   - Nedelja 1: [Uvod u *Unity* pogon - Osnovne rada u *Unity* pogonu; Transformacije 3D objekata; Teksture i materijali](../../tree/week-1 "Link do materijala")
+   - Nedelja 2: [3D modelovanje u *Unity*-ju - *ProBuilder* i *ProGrids* paketi](../../tree/week-2  "Link do materijala")
+   - Nedelja 3: [Kreiranje virtualnih okruženja - *Unity Terrain Tools*](../../tree/week-3 "Link do materijala")
 </details>
 
 ---
@@ -61,7 +63,7 @@ Materijali za računarske vežbe sa kursa "Sistemi virtualne realnosti" na [Faku
 ### *Windows*, *macOS*, *Linux*
 *Unity pogon* i *Visual Studio* razvojno okruženje su dostupni za sve navedene operativne sisteme i proces instalacije je skoro identičan za svaki od njih. Ispratite uputstvo u nastavku i sve bi trebalo da bude u redu.
 
-#### :white_check_mark:  Instalacija *Unity* pogona i *Visual Studio* razvojnog okruženja
+#### :white_check_mark: Instalacija *Unity* pogona i *Visual Studio* razvojnog okruženja
 - [Tutorijal](https://www.youtube.com/watch?v=gxX7euQ_2Qc&ab_channel=GDTitans "Video uputstvo za instalaciju Unity pogona i Visual Studio razvojnog okruženja")
 
 - :exclamation: <ins>***VAŽNE NAPOMENE:***</ins> 
