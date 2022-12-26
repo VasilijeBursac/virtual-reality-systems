@@ -7,9 +7,8 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(SphereCollider))]
 public class PlayerController : MonoBehaviour
 {
-    private bool isAlive = true;
     private Rigidbody rb;
-    private SphereCollider sphereCollider;
+    private SphereCollider playerCollider;
 
     [Header("Movement")]
     [SerializeField] float speed = 5.0f; 
@@ -18,6 +17,9 @@ public class PlayerController : MonoBehaviour
     [Header("Jumping")]
     [SerializeField] float jumpForce = 5.0f;
     [SerializeField] float fallMultiplier = 2.0f;
+    [SerializeField] private float shakeDurationAfterLanding = 0.2f;
+    private bool shouldJump = false;
+    private bool wasInAir = false;
 
     [Header("GroundCheck")]
     [SerializeField] private LayerMask groundMask;
@@ -25,13 +27,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float groundCheckDistance = 0.05f;
     private RaycastHit groundCheckHit = new RaycastHit();
 
-    public bool IsFalling => !CheckIsPlayerGrounded() && rb.velocity.y < 0;
+    [Header("Death")]
+    [SerializeField] private float minimalDeadlyHeight = -5f;
+    private bool isAlive = true;
+
+    public bool IsFalling => !IsGrounded && rb.velocity.y < 0;
     public bool IsGrounded { get; private set; }
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        sphereCollider = GetComponent<SphereCollider>();
+        playerCollider = GetComponent<SphereCollider>();
     }
 
     // Start is called before the first frame update
@@ -43,15 +49,18 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //IsGrounded = CheckIsPlayerGrounded();
+        IsGrounded = CheckIsPlayerGrounded();
 
-        if (Input.GetKeyDown(KeyCode.Space) && CheckIsPlayerGrounded())
-            Jump();
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded)
+            shouldJump = true;
+
+        if (IsGrounded && wasInAir)
+            LandAfterJump();
 
         if (IsFalling)
             rb.velocity += Physics.gravity.y * fallMultiplier * Time.deltaTime * Vector3.up;
 
-        if (transform.position.y < -5f)
+        if (transform.position.y < minimalDeadlyHeight)
             Die();
     }
 
@@ -61,6 +70,9 @@ public class PlayerController : MonoBehaviour
             return;
 
         Move();
+
+        if (shouldJump)
+            Jump();
     }
 
     private void Move()
@@ -74,15 +86,23 @@ public class PlayerController : MonoBehaviour
 
     private bool CheckIsPlayerGrounded()
     {
-        Vector3 sphereCastOrigin = rb.position + sphereCollider.center;
-        float sphereCastRadius = sphereCollider.radius * groundCheckRadiusMultiplier;
-        float sphereCastTravelDistance = sphereCollider.bounds.extents.y - sphereCastRadius + groundCheckDistance;
+        Vector3 sphereCastOrigin = rb.position + playerCollider.center;
+        float sphereCastRadius = playerCollider.radius * groundCheckRadiusMultiplier;
+        float sphereCastTravelDistance = playerCollider.bounds.extents.y - sphereCastRadius + groundCheckDistance;
         return Physics.SphereCast(sphereCastOrigin, sphereCastRadius, Vector3.down, out groundCheckHit, sphereCastTravelDistance, groundMask);
     }
 
     private void Jump()
     {
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        shouldJump = false;
+        wasInAir = true;
+    }
+
+    private void LandAfterJump()
+    {
+        wasInAir = false;
+        CameraManager.Instance.ShakeCameraSmoothly(2f, 0.5f, shakeDurationAfterLanding);
     }
 
     private void Die()
@@ -106,6 +126,9 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            CameraManager.Instance.ShakeCameraSmoothly(2f, 0.5f, 1f);
             Die();
+        }
     }
 }
