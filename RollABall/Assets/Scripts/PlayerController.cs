@@ -31,6 +31,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float minimalDeadlyHeight = -5f;
     private bool isAlive = true;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip collectedSoundEffect;
+    [SerializeField] private AudioClip landingSoundEffect;
+    [SerializeField] private AudioClip[] obstacleHitSoundEffects;
+
     public bool IsFalling => !IsGrounded && rb.velocity.y < 0;
     public bool IsGrounded { get; private set; }
 
@@ -103,6 +108,7 @@ public class PlayerController : MonoBehaviour
     {
         wasInAir = false;
         CameraManager.Instance.ShakeCameraSmoothly(2f, 0.5f, shakeDurationAfterLanding);
+        AudioManager.Instance.PlaySound(landingSoundEffect);
     }
 
     private void Die()
@@ -120,14 +126,19 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Collectable"))
+        {
             other.gameObject.SetActive(false);
+            AudioManager.Instance.PlaySound(collectedSoundEffect);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {
+            Debug.Log(collision.relativeVelocity.magnitude);
             CameraManager.Instance.ShakeCameraSmoothly(2f, 0.5f, 1f);
+            AudioManager.Instance.PlayRandomSound(obstacleHitSoundEffects, AudioManager.Instance.CalculateVolumeByCollisionForce(collision.relativeVelocity.magnitude, 5));
             Die();
         }
     }

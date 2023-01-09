@@ -3,10 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraManager : MonoBehaviour
+public class CameraManager : Singleton<CameraManager>
 {
-    public static CameraManager Instance { get; private set; }
-
     [Header("Camera Switch")]
     [SerializeField] private CinemachineVirtualCamera[] switchableCameras;
     [SerializeField] private int currentCameraIndex = 0;
@@ -16,11 +14,6 @@ public class CameraManager : MonoBehaviour
     private CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin;
 
     private CinemachineVirtualCamera ActiveCamera => switchableCameras[currentCameraIndex];
-
-    private void Awake()
-    {
-        Instance = this;
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +56,7 @@ public class CameraManager : MonoBehaviour
             currentCameraIndex = 0;
 
         //switchableCameras[currentCameraIndex].gameObject.SetActive(true);
+        //switchableCameras[currentCameraIndex].Priority = 1000;
         ActivateCurrentCamera();
     }
 
