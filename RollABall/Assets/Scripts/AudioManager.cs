@@ -70,17 +70,17 @@ public class AudioManager : PersistentSingleton<AudioManager>
         effectsAudioSource.mute = !effectsAudioSource.mute;
     }
 
-    private void ChangeMasterVolume(float value)
+    public void ChangeMasterVolume(float value)
     {
         AudioListener.volume = value;
     }
 
-    private void ChangeMusicVolume(float value)
+    public void ChangeMusicVolume(float value)
     {
         musicAudioSource.volume = value;
     }
 
-    private void ChangeEffectsVolume(float value)
+    public void ChangeEffectsVolume(float value)
     {
         effectsAudioSource.volume = value;
     }
